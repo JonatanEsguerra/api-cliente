@@ -14,11 +14,12 @@ async function iniciar() {
     console.log('Modelos sincronizados con la base de datos.');
 
     app.listen(PORT, () => {
-      console.log(`API de Cliente corriendo en http://localhost:${PORT}`);
+      console.log(`API corriendo en el puerto ${PORT}`);
     });
   } catch (error) {
-    console.error('Error al iniciar la aplicación:', error.message);
-    process.exit(1);
+    console.error('Error al iniciar la aplicación:');
+    console.error(error);
+    process.exitCode = 1;
   }
 }
 
